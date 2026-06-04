@@ -58,16 +58,33 @@ function Index() {
               </a>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-3 self-center sm:grid-cols-3">
-            {stats.map((s) => (
-              <div key={s.label} className="rounded-xl border border-border bg-card p-4 text-center">
-                <div className="text-2xl font-semibold text-primary">{s.value}</div>
-                <div className="mt-1 text-xs text-muted-foreground">{s.label}</div>
-              </div>
-            ))}
+          <div className="relative">
+            <img
+              src={hospitalExterior}
+              alt="Life Care Hospital exterior"
+              width={1536}
+              height={1024}
+              className="aspect-[4/3] w-full rounded-2xl object-cover shadow-xl"
+            />
+            <div className="absolute -bottom-4 -left-4 hidden rounded-xl border border-border bg-card p-4 shadow-lg sm:block">
+              <div className="text-2xl font-semibold text-primary">4.8★</div>
+              <div className="text-xs text-muted-foreground">29 patient reviews</div>
+            </div>
           </div>
         </div>
       </section>
+
+      <Section>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+          {stats.map((s) => (
+            <div key={s.label} className="rounded-xl border border-border bg-card p-4 text-center">
+              <div className="text-2xl font-semibold text-primary">{s.value}</div>
+              <div className="mt-1 text-xs text-muted-foreground">{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
 
       <Section>
         <h2 className="text-2xl font-semibold tracking-tight">Why patients choose Life Care</h2>
