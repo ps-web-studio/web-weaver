@@ -1,6 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout, Section } from "@/components/Layout";
 import { ShieldCheck, Stethoscope, Activity, Clock, ArrowRight, Phone } from "lucide-react";
+import hospitalExterior from "@/assets/hospital-exterior.jpg";
+import emergencyRoom from "@/assets/emergency-room.jpg";
+import medicalTeam from "@/assets/medical-team.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -55,16 +58,33 @@ function Index() {
               </a>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-3 self-center sm:grid-cols-3">
-            {stats.map((s) => (
-              <div key={s.label} className="rounded-xl border border-border bg-card p-4 text-center">
-                <div className="text-2xl font-semibold text-primary">{s.value}</div>
-                <div className="mt-1 text-xs text-muted-foreground">{s.label}</div>
-              </div>
-            ))}
+          <div className="relative">
+            <img
+              src={hospitalExterior}
+              alt="Life Care Hospital exterior"
+              width={1536}
+              height={1024}
+              className="aspect-[4/3] w-full rounded-2xl object-cover shadow-xl"
+            />
+            <div className="absolute -bottom-4 -left-4 hidden rounded-xl border border-border bg-card p-4 shadow-lg sm:block">
+              <div className="text-2xl font-semibold text-primary">4.8★</div>
+              <div className="text-xs text-muted-foreground">29 patient reviews</div>
+            </div>
           </div>
         </div>
       </section>
+
+      <Section>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+          {stats.map((s) => (
+            <div key={s.label} className="rounded-xl border border-border bg-card p-4 text-center">
+              <div className="text-2xl font-semibold text-primary">{s.value}</div>
+              <div className="mt-1 text-xs text-muted-foreground">{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
 
       <Section>
         <h2 className="text-2xl font-semibold tracking-tight">Why patients choose Life Care</h2>
@@ -79,6 +99,23 @@ function Index() {
               <p className="mt-1.5 text-sm text-muted-foreground">{h.desc}</p>
             </div>
           ))}
+        </div>
+      </Section>
+
+      <Section className="!pt-0">
+        <div className="grid gap-4 md:grid-cols-2">
+          <figure className="overflow-hidden rounded-2xl border border-border">
+            <img src={emergencyRoom} alt="Modern emergency and diagnostic facilities" loading="lazy" width={1024} height={1024} className="aspect-[4/3] w-full object-cover" />
+            <figcaption className="border-t border-border bg-card px-4 py-3 text-sm text-muted-foreground">
+              <span className="font-medium text-foreground">Modern facilities</span> — advanced diagnostic and surgical equipment.
+            </figcaption>
+          </figure>
+          <figure className="overflow-hidden rounded-2xl border border-border">
+            <img src={medicalTeam} alt="Experienced multi-speciality medical team" loading="lazy" width={1536} height={1024} className="aspect-[4/3] w-full object-cover" />
+            <figcaption className="border-t border-border bg-card px-4 py-3 text-sm text-muted-foreground">
+              <span className="font-medium text-foreground">Experienced team</span> — specialists across gynaecology, cardiology and surgery.
+            </figcaption>
+          </figure>
         </div>
       </Section>
 
