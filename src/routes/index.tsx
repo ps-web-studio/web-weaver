@@ -1,6 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout, Section } from "@/components/Layout";
 import { ShieldCheck, Stethoscope, Activity, Clock, ArrowRight, Phone } from "lucide-react";
+import hospitalExterior from "@/assets/hospital-exterior.jpg";
+import emergencyRoom from "@/assets/emergency-room.jpg";
+import medicalTeam from "@/assets/medical-team.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
