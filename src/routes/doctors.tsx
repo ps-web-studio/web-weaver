@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout, PageHeader, Section } from "@/components/Layout";
 import { Stethoscope, Star, Clock, GraduationCap } from "lucide-react";
+import doctorCare from "@/assets/doctor-care.jpg";
 
 export const Route = createFileRoute("/doctors")({
   head: () => ({
