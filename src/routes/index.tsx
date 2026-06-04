@@ -103,6 +103,23 @@ function Index() {
       </Section>
 
       <Section className="!pt-0">
+        <div className="grid gap-4 md:grid-cols-2">
+          <figure className="overflow-hidden rounded-2xl border border-border">
+            <img src={emergencyRoom} alt="Modern emergency and diagnostic facilities" loading="lazy" width={1024} height={1024} className="aspect-[4/3] w-full object-cover" />
+            <figcaption className="border-t border-border bg-card px-4 py-3 text-sm text-muted-foreground">
+              <span className="font-medium text-foreground">Modern facilities</span> — advanced diagnostic and surgical equipment.
+            </figcaption>
+          </figure>
+          <figure className="overflow-hidden rounded-2xl border border-border">
+            <img src={medicalTeam} alt="Experienced multi-speciality medical team" loading="lazy" width={1536} height={1024} className="aspect-[4/3] w-full object-cover" />
+            <figcaption className="border-t border-border bg-card px-4 py-3 text-sm text-muted-foreground">
+              <span className="font-medium text-foreground">Experienced team</span> — specialists across gynaecology, cardiology and surgery.
+            </figcaption>
+          </figure>
+        </div>
+      </Section>
+
+      <Section className="!pt-0">
         <div className="rounded-2xl border border-border bg-accent/10 p-6 sm:p-10">
           <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
             <div>
