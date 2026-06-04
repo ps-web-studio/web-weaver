@@ -54,6 +54,13 @@ function DoctorsPage() {
         description="Experienced consultants across gynaecology, surgery and cardiology."
       />
       <Section>
+        <div className="mb-10 grid items-center gap-6 rounded-2xl border border-border bg-card p-6 md:grid-cols-[1fr_2fr]">
+          <img src={doctorCare} alt="Caring specialist doctor" loading="lazy" width={1024} height={1024} className="aspect-square w-full rounded-xl object-cover" />
+          <div>
+            <h2 className="text-xl font-semibold">Care from experienced specialists</h2>
+            <p className="mt-2 text-muted-foreground">Our consultants bring decades of experience in gynaecology, obstetrics, laparoscopic surgery and cardiology — backed by a 4.8★ patient rating.</p>
+          </div>
+        </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {doctors.map((d) => (
             <article key={d.name} className="flex flex-col rounded-2xl border border-border bg-card p-6">
