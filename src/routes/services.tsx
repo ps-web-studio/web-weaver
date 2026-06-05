@@ -1,5 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout, PageHeader, Section } from "@/components/Layout";
+import surgeryImg from "@/assets/surgery.jpg";
+import cardiologyImg from "@/assets/cardiology.jpg";
+import diagnosticsImg from "@/assets/diagnostics.jpg";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -84,6 +87,13 @@ function ServicesPage() {
         description="A multi-speciality offering combining emergency care, surgery, diagnostics, cardiology and women's health."
       />
       <Section>
+        <figure className="mb-10 overflow-hidden rounded-2xl border border-border">
+          <img src={surgeryImg} alt="Surgeons performing a procedure in a modern operating theatre" loading="lazy" width={1536} height={1024} className="aspect-[21/9] w-full object-cover" />
+          <figcaption className="border-t border-border bg-card px-4 py-3 text-sm text-muted-foreground">
+            <span className="font-medium text-foreground">Operating theatre</span> — 294+ surgical procedures including laparoscopic surgery.
+          </figcaption>
+        </figure>
+
         <div className="grid gap-8 lg:grid-cols-2">
           {serviceGroups.map((g) => (
             <div key={g.title}>
@@ -94,9 +104,13 @@ function ServicesPage() {
         </div>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
+          <figure className="overflow-hidden rounded-2xl border border-border lg:col-span-2">
+            <img src={diagnosticsImg} alt="Diagnostic laboratory with advanced medical equipment" loading="lazy" width={1536} height={1024} className="aspect-[21/9] w-full object-cover" />
+          </figure>
           <div>
             <h2 className="mb-3 text-lg font-semibold text-foreground">Cardiology Services</h2>
             <p className="mb-3 text-sm text-muted-foreground">Led by Dr. Mustafa Ahmed Mazumder</p>
+            <img src={cardiologyImg} alt="Cardiologist reviewing ECG heart scan" loading="lazy" width={1024} height={1024} className="mb-4 aspect-[4/3] w-full rounded-xl border border-border object-cover" />
             <Table rows={cardiology as [string, string][]} />
           </div>
           <div>

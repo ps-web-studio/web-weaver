@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout, PageHeader, Section } from "@/components/Layout";
+import receptionImg from "@/assets/reception.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -42,6 +43,12 @@ function AboutPage() {
         description="Life Care Hospital RCS Ltd. is a reputed NGO/Trust hospital in Goalpara, Assam — empanelled under Ayushman Bharat PM-JAY and offering 294+ surgeries, 114+ diseases treated, 29+ diagnostic tests, 36+ emergency services and 86+ treatment options."
       />
       <Section>
+        <figure className="mb-10 overflow-hidden rounded-2xl border border-border">
+          <img src={receptionImg} alt="Hospital reception and welcoming staff" loading="lazy" width={1536} height={1024} className="aspect-[21/9] w-full object-cover" />
+          <figcaption className="border-t border-border bg-card px-4 py-3 text-sm text-muted-foreground">
+            <span className="font-medium text-foreground">Welcoming care</span> — friendly staff at our Goalpara reception.
+          </figcaption>
+        </figure>
         <div className="grid gap-10 lg:grid-cols-2">
           <div>
             <h2 className="text-xl font-semibold">Basic Information</h2>
